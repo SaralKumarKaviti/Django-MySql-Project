@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <style>
+        .note
+            {
+                text-align: center;
+                height: 80px;
+                background: -webkit-linear-gradient(left, #0072ff, #8811c5);
+                color: #fff;
+                font-weight: bold;
+                line-height: 80px;
+            }
+        .form-content
+            {
+                padding: 5%;
+                border: 1px solid #ced4da;
+                margin-bottom: 2%;
+            }
+        .form-control
+            {
+                border-radius:1.5rem;
+            }
+        .btnSubmit
+            {
+                border:none;
+                border-radius:1.5rem;
+                padding: 1%;
+                width: 20%;
+                cursor: pointer;
+                background: #0062cc;
+                color: #fff;
+            }
+        .canSubmit
+            {
+                border:none;
+                border-radius:1.5rem;
+                padding: 1%;
+                width: 20%;
+                cursor: pointer;
+                background: red;
+                color: #fff;
+            }
+
+    </style>
+
+    <title>Add Page</title>
+  </head>
+
+  <body>
+    <form method="POST" action="" enctype="multipart/form-data">
+        {% csrf_token %}
+        
+    <div class="container register-form">
+            <div class="form">
+                <div class="note">
+                    <p>Registration Form.</p>
+                </div>
+
+                <div class="form-content">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="First Name *" name="firstName" value=""/>
+                                <!-- {{data.firstName}} -->
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Last Name *" name="lastName" value=""/>
+                                <!-- {{data.lastName}} -->
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Email ID *" name="email" value=""/>
+                                <!-- {{data.email}} -->
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Phone Number *" name="phoneNumber" value=""/>
+                                <!-- {{data.phoneNumber}} -->
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input type="file" class="form-control"  name="profilePic" value=""/>
+                                <!-- {{data.email}} -->
+                            </div>
+                            <!-- <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Phone Number *" name="phoneNumber" value=""/>
+                                {{data.phoneNumber}}
+                            </div> -->
+                        </div>
+                    </div>
+                    <center><input type="submit" class="btnSubmit" name="add">
+                    <input type="submit" class="canSubmit" value="Cancel" name="view"></center>
+                </div>
+            </div>
+        </div>
+
+  </body>
+
+</html>
